@@ -59,7 +59,7 @@ export function createLine(p1, p2, scale = 1) {
  * @returns {string} An SVG d-string of points.
  */
 export function getSmoothPath(shape, simplifyPointsTolerance) {
-  simplifyPointsTolerance = simplifyPointsTolerance || 1.0;
+  simplifyPointsTolerance = simplifyPointsTolerance || 0.8;
   const points =
     shape.type === 'freehand'
       ? simplifyPoints(shape.points, simplifyPointsTolerance)
@@ -77,7 +77,7 @@ export function getSmoothPath(shape, simplifyPointsTolerance) {
   return line(points);
 }
 
-function simplifyPoints(points, tolerance = 1.0) {
+function simplifyPoints(points, tolerance) {
   if (points.length <= 2) {
     return points;
   }

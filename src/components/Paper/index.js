@@ -1167,7 +1167,7 @@ class Paper extends React.Component {
   drawCurrentShape = () => {
     if (Object.keys(this.state.currentShape).length === 0) return null;
 
-    return this.createShapeElement(this.convertShape(this.state.currentShape), 0.7);
+    return this.createShapeElement(this.convertShape(this.state.currentShape));
   };
 
   canvasTouchStartHandler = (event) => {
